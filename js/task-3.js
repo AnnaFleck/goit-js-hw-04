@@ -1,9 +1,21 @@
-function filterArray(numbers, value) {
-  const bigValue = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > value) {
-      bigValue.push(numbers[i]);
-    }
-  }
-  return bigValue;
-}
+const profile = {
+  username: 'Jacob',
+  playTime: 300,
+  changeUsername(newName) {
+    this.username = newName;
+  },
+  updatePlayTime(hours) {
+    this.playTime += hours;
+  },
+  getInfo() {
+    return `${this.username} has ${this.playTime} active hours!`;
+  },
+};
+
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+profile.changeUsername('Marco');
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
